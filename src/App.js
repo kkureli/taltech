@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Container from "./components/container";
+import Footer from "./components/footer";
+import Header from "./components/header";
+import "./localization/i18n.config";
+import { Provider } from "react-redux"; //binding redux withreact app
+import { store } from "./redux/store/store";
+import ConfigProviderWrapper from "./components/configProvider/configProvider";
+import Navigation from "./navigation";
+import "react-datepicker/dist/react-datepicker.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <ConfigProviderWrapper>
+        <div>
+          <Header />
+          <Container>
+            <Navigation />
+          </Container>
+        </div>
+        <Footer />
+      </ConfigProviderWrapper>
+    </Provider>
   );
 }
 
