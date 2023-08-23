@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/taltech/static/css/main.6dfcd463.css",
-    "main.js": "/taltech/static/js/main.429e302c.js",
+    "main.js": "/taltech/static/js/main.8664ddfd.js",
     "static/js/787.b230d953.chunk.js": "/taltech/static/js/787.b230d953.chunk.js",
     "static/media/Proxima Nova Bold.otf": "/taltech/static/media/Proxima Nova Bold.da16c8975f25ca6f2997.otf",
     "static/media/Proxima Nova Black.otf": "/taltech/static/media/Proxima Nova Black.3368220d5963fa57a290.otf",
@@ -24,11 +24,11 @@
     "static/media/CalendarIcon.svg": "/taltech/static/media/CalendarIcon.457a95dcbef4bd24ef5ed690b958f1af.svg",
     "index.html": "/taltech/index.html",
     "main.6dfcd463.css.map": "/taltech/static/css/main.6dfcd463.css.map",
-    "main.429e302c.js.map": "/taltech/static/js/main.429e302c.js.map",
+    "main.8664ddfd.js.map": "/taltech/static/js/main.8664ddfd.js.map",
     "787.b230d953.chunk.js.map": "/taltech/static/js/787.b230d953.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6dfcd463.css",
-    "static/js/main.429e302c.js"
+    "static/js/main.8664ddfd.js"
   ]
 }
