@@ -35,12 +35,11 @@ const LoginWithIDCard = () => {
           as="p"
           className="login-option-description-text"
         >
-          Teenusesse{" "}
+          You need a card reader and a valid ID card to log in to{" "}
           <Text as="span" className="bold-text" color={"primary"}>
-            TalTech ja autentimise teenus{" "}
+            TalTech and the authentication service.{" "}
           </Text>
-          sisselogimiseks vajate kaardilugejat ja kehtivat ID-kaarti. Sisestage
-          ID-kaart kaardilugejasse ja vajutage "Jätka".
+          Insert the ID card into the card reader and press "Continue".
         </Text>
       )}
       <TTNewButton

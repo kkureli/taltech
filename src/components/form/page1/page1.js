@@ -82,7 +82,7 @@ const Page1 = () => {
                 marginLeft: 220,
               }}
               label={t("form.page1.woman")}
-              value={formFields.woman}
+              checked={formFields.woman}
               onChange={(e) =>
                 updateFormFields({
                   woman: !formFields.woman,
@@ -96,7 +96,7 @@ const Page1 = () => {
                 marginLeft: 16,
               }}
               label={t("form.page1.man")}
-              value={formFields.man}
+              checked={formFields.man}
               onChange={(e) =>
                 updateFormFields({
                   man: !formFields.man,
@@ -112,7 +112,7 @@ const Page1 = () => {
             marginLeft: 220,
           }}
           label={t("form.page1.doNotOwnEstonianPersonalIdNumber")}
-          value={formFields.doNotHaveAnIDNumber}
+          checked={formFields.doNotHaveAnIDNumber}
           onChange={(e) =>
             updateFormFields({
               doNotHaveAnIDNumber: !formFields.doNotHaveAnIDNumber,

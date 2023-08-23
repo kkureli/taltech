@@ -33,12 +33,12 @@ const LoginWithEmail = ({ setIsOTPSent }) => {
           as="p"
           className="login-option-description-text"
         >
-          Teenusesse{" "}
+          To log in to{" "}
           <Text as="span" className="bold-text" color={"primary"}>
-            TalTech ja autentimise teenus{" "}
+            TalTech and the authentication service,{" "}
           </Text>
-          sisselogimiseks saadame Teile kontrollkoodi postkasti. Sisestage oma
-          e-postiaadress ja vajutage "Saada". Seejärel sisestage kontrollkood.
+          we will send you a verification code to your mailbox. Enter your email
+          address and press "Send". Then enter the verification code.
         </Text>
       )}
       <Form

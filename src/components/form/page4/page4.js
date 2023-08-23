@@ -8,6 +8,7 @@ import {
   SET_FORM_PAGE,
   UPDATE_FORM_FIELDS,
 } from "../../../redux/actions/types";
+import { getCurrentLanguage } from "../../../localization/i18n.config";
 
 const Page4 = () => {
   const { t } = useTranslation();
@@ -23,12 +24,12 @@ const Page4 = () => {
     dispatch(actionCreator(SET_FORM_PAGE, 3));
   };
   const canContinue = useMemo(() => {
-    if (formFields.hasORDID && !formFields.ordIDNumber) {
-      return false;
+    if (formFields.orcIdNotNeeded || formFields.ordIDNumber) {
+      return true;
     }
-    return true;
-  }, [formFields.hasORDID, formFields.ordIDNumber]);
-
+    return false;
+  }, [formFields.orcIdNotNeeded, formFields.ordIDNumber]);
+  const currentLanguage = getCurrentLanguage();
   return (
     <div>
       <Text as="h3">{t("form.page4.title")}</Text>
@@ -51,16 +52,31 @@ const Page4 = () => {
             marginLeft: 220,
           }}
         >
-          <Text>
-            Kui kood puudub, siis loo see veebilehel{" "}
-            <TTNewButton variant="link" color="secondary">
-              https://orcid.org/signin
-            </TTNewButton>
-            . Seo ORC-ID identifitseerimiskoodiga referaatandmebaasides
-            avalikustatud publikatsioonid. Ülikool kasutab akadeemilise
-            personali publitseerimise tulemuslikkuse hindamisel koodi otsinguna
-            Scopus viiteandmebaasis. Avalikusta kood ka enda ETISe CVs.
-          </Text>
+          {currentLanguage === "est" ? (
+            <Text>
+              Kui kood puudub, siis loo see veebilehel{" "}
+              <TTNewButton variant="link" color="secondary">
+                https://orcid.org/signin
+              </TTNewButton>
+              . Seo ORC-ID identifitseerimiskoodiga referaatandmebaasides
+              avalikustatud publikatsioonid. Ülikool kasutab akadeemilise
+              personali publitseerimise tulemuslikkuse hindamisel koodi
+              otsinguna Scopus viiteandmebaasis. Avalikusta kood ka enda ETISe
+              CVs.
+            </Text>
+          ) : (
+            <Text>
+              If the code is missing, create it at{" "}
+              <TTNewButton variant="link" color="secondary">
+                https://orcid.org/signin
+              </TTNewButton>
+              . Link the publications published in reference databases with the
+              ORC-ID identification code. The university uses the code as a
+              search in the Scopus reference database when evaluating the
+              publication performance of academic staff. Also publish the code
+              in your ETIS CV.
+            </Text>
+          )}
         </div>
         <CustomInput
           style={{
@@ -68,10 +84,10 @@ const Page4 = () => {
             marginLeft: 220,
           }}
           label={t("form.page4.ORD-required")}
-          value={!formFields.hasORDID}
+          checked={formFields.orcIdNotNeeded}
           onChange={(e) =>
             updateFormFields({
-              hasORDID: !formFields.hasORDID,
+              orcIdNotNeeded: !formFields.orcIdNotNeeded,
             })
           }
           type="checkbox"

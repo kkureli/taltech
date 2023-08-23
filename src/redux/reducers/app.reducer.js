@@ -42,7 +42,7 @@ const defaultFormFields = {
   residentalAddress: "",
   page3EducationForm: defaultPage3EducationForm,
   ordIDNumber: "",
-  hasORDID: true,
+  orcIdNotNeeded: false,
   page5ChildrenForm: defaultPage5ChildrenForm,
   noChildren: false,
   copyOfIdentity: [],

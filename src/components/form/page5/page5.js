@@ -118,7 +118,7 @@ const Page5 = () => {
             marginBottom: 42,
           }}
           label={t("form.page5.noChildrenCheckbox")}
-          value={!formFields.noChildren}
+          checked={formFields.noChildren}
           onChange={(e) =>
             updateFormFields({
               noChildren: !formFields.noChildren,

@@ -1,7 +1,10 @@
 import React from "react";
 import { TTNewFileUpload, Text } from "taltech-styleguide";
 import "./style.css";
+import { getCurrentLanguage } from "../../localization/i18n.config";
 const CustomFileUploader = ({ onChange, onRemove, label, sublabel, files }) => {
+  const currentLanguage = getCurrentLanguage();
+
   return (
     <div className="custom-file-uploader-container">
       <div className="d-flex">
@@ -21,10 +24,17 @@ const CustomFileUploader = ({ onChange, onRemove, label, sublabel, files }) => {
         onRemove={onRemove}
         subTitleText="(Max file size 5MB)"
         titleText={
-          <>
-            Drag file(s) here or{" "}
-            <span className="text-secondary">upload from computer</span>
-          </>
+          currentLanguage === "est" ? (
+            <>
+              Manuse lisamiseks lohista failid siia{" "}
+              <p className="text-secondary">Laadi arvutist</p>
+            </>
+          ) : (
+            <>
+              Drag file(s) here or{" "}
+              <span className="text-secondary">upload from computer</span>
+            </>
+          )
         }
       />
     </div>
