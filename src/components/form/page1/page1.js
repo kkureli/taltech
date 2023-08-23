@@ -63,7 +63,7 @@ const Page1 = () => {
         {formFields.doNotHaveAnIDNumber && (
           <CustomDatePicker
             label={t("form.page1.dateOfBirthday")}
-            value={formFields.dateOfBirth}
+            value={new Date(formFields.dateOfBirth)}
             onChange={(val) => updateFormFields({ dateOfBirth: val })}
           />
         )}

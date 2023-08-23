@@ -101,7 +101,7 @@ const Page5 = () => {
               <CustomDatePicker
                 labelStyle={{ marginRight: 32 }}
                 label={t("form.page5.Sünnikuupäev")}
-                value={formFields.page5ChildrenForm[i].date}
+                value={new Date(formFields.page5ChildrenForm[i].date)}
                 onChange={(val) => updateChildrenForm("date", val, i)}
               />
             </div>

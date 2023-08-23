@@ -132,7 +132,7 @@ const Page3 = () => {
               <CustomDatePicker
                 labelStyle={{ marginRight: 32 }}
                 label={t("form.page3.graduateDate")}
-                value={formFields.page3EducationForm[i].date}
+                value={new Date(formFields.page3EducationForm[i].date)}
                 onChange={(val) => updateEducationForm("date", val, i)}
               />
             </div>
